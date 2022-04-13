@@ -6,16 +6,33 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^13.5.0",
+    "electron": "^18.0.3",
+    "electron-builder": "^23.0.3",
+    "foreman": "^3.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "nf start",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "ebuild": "npm run build && node_modules/.bin/build"
+  },
+  "homepage": "./",
+  "main": "electron/main.js",
+  "build": {
+    "productName": "Electron Bell",
+    "appId": "com.iljal.electronbell",
+    "electronVersion": "18.0.3",
+    "files": [
+      "build/**/*",
+      "electron/*"
+    ]
   },
   "eslintConfig": {
     "extends": [
